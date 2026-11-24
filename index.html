@@ -2,23 +2,201 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Kurikulum Grisaba</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurikulum Grisaba</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family:Arial,sans-serif;
+  background:#f4f7fc;
+  color:#263445;
+  line-height:1.6;
+}
+
+header {
+  background:#123e70;
+  color:white;
+  padding:25px 8%;
+}
+
+header h1 { font-size:25px; }
+header p { color:#dceaff; }
+
+nav {
+  background:white;
+  padding:17px 8%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:25px;
+  box-shadow:0 2px 8px #ddd;
+}
+
+nav a {
+  text-decoration:none;
+  color:#164e91;
+  font-weight:bold;
+}
+
+.hero {
+  background:linear-gradient(120deg,#123e70,#2879bd);
+  color:white;
+  padding:75px 8%;
+}
+
+.hero h2 {
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.hero p {
+  max-width:650px;
+  margin-bottom:25px;
+}
+
+.tombol {
+  display:inline-block;
+  background:white;
+  color:#123e70;
+  padding:12px 22px;
+  border-radius:7px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.container { padding:45px 8%; }
+
+.judul {
+  color:#123e70;
+  margin-bottom:25px;
+  font-size:25px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 3px 12px #ddd;
+  border-top:4px solid #2879bd;
+}
+
+.card h3 {
+  color:#164e91;
+  margin-bottom:10px;
+}
+
+.card p { font-size:14px; }
+
+.informasi {
+  background:#e5effb;
+  padding:30px;
+  border-radius:12px;
+}
+
+footer {
+  background:#123e70;
+  color:white;
+  text-align:center;
+  padding:28px;
+}
+
+@media(max-width:600px) {
+  .hero h2 { font-size:27px; }
+  header h1 { font-size:20px; }
+  .container { padding:35px 7%; }
+}
+</style>
 </head>
+
 <body>
 
-    <h1>SELAMAT DATANG</h1>
+<header>
+  <h1>KURIKULUM GRISABA</h1>
+  <p>SMK NEGERI 1 BANCAK | KABUPATEN SEMARANG</p>
+</header>
 
-    <h2>Website Kurikulum Grisaba</h2>
+<nav>
+  <a href="#beranda">Beranda</a>
+  <a href="#akademik">Akademik</a>
+  <a href="#asesmen">Asesmen</a>
+  <a href="#dokumen">Dokumen</a>
+  <a href="#informasi">Informasi</a>
+</nav>
 
-    <p>SMK Negeri 1 Bancak</p>
+<section class="hero" id="beranda">
+  <h2>Selamat Datang di Kurikulum Grisaba</h2>
+  <p>
+    Pusat informasi akademik SMK Negeri 1 Bancak.
+    Informasi kegiatan pembelajaran, agenda sekolah,
+    asesmen, dan dokumen kurikulum.
+  </p>
+  <a href="#akademik" class="tombol">Jelajahi Informasi</a>
+</section>
 
-    <p>
-        Pusat informasi kegiatan akademik,
-        agenda sekolah, dan asesmen.
-    </p>
+<section class="container" id="akademik">
+  <h2 class="judul">Informasi Akademik</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Kalender Pendidikan</h3>
+      <p>Informasi kalender pendidikan dan kegiatan sekolah.</p>
+    </div>
+    <div class="card">
+      <h3>Agenda Akademik</h3>
+      <p>Jadwal dan agenda kegiatan akademik sekolah.</p>
+    </div>
+    <div class="card">
+      <h3>Pembelajaran</h3>
+      <p>Informasi kegiatan pembelajaran dan kurikulum.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="asesmen">
+  <h2 class="judul">Informasi Asesmen</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>ASAJ</h3>
+      <p>Informasi asesmen kelas XII.</p>
+    </div>
+    <div class="card">
+      <h3>ASAS</h3>
+      <p>Informasi asesmen kelas X dan XI.</p>
+    </div>
+    <div class="card">
+      <h3>TKA</h3>
+      <p>Informasi Tes Kemampuan Akademik.</p>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="dokumen">
+  <h2 class="judul">Pusat Dokumen</h2>
+  <div class="informasi">
+    <h3>Dokumen Kurikulum</h3>
+    <p>Tempat informasi dan dokumen pendukung kegiatan kurikulum sekolah.</p>
+  </div>
+</section>
+
+<section class="container" id="informasi">
+  <h2 class="judul">Informasi Sekolah</h2>
+  <div class="informasi">
+    <h3>SMK Negeri 1 Bancak</h3>
+    <p>Bersama membangun pembelajaran berkualitas, berkarakter, dan berorientasi pada dunia kerja.</p>
+  </div>
+</section>
+
+<footer>
+  <h3>SMK NEGERI 1 BANCAK</h3>
+  <p>Website Informasi Kurikulum Grisaba</p>
+  <p>© 2026</p>
+</footer>
 
 </body>
 </html>
-
