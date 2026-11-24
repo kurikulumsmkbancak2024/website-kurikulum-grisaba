@@ -248,5 +248,30 @@ footer {
   <p>© 2026</p>
 </footer>
 
+<script>
+const menuLinks = document.querySelectorAll("nav a");
+const sections = document.querySelectorAll("section[id]");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      menuLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + entry.target.id) {
+          link.classList.add("active");
+        }
+      });
+    }
+  });
+}, {
+  rootMargin: "-20% 0px -60% 0px"
+});
+
+sections.forEach((section) => {
+  observer.observe(section);
+});
+</script>
+
 </body>
 </html>
