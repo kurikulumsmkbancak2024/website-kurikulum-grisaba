@@ -2,291 +2,517 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kurikulum Grisaba</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurikulum Grisaba | SMK Negeri 1 Bancak</title>
 
-body {
-  font-family:Arial,sans-serif;
-  background:#f4f7fc;
-  color:#263445;
-  line-height:1.6;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-header {
-  background:#123e70;
-  color:white;
-  padding:25px 8%;
-}
-.logo {
-  width:80px;
-  height:80px;
-  object-fit:contain;
-}
+    body {
+      font-family: Arial, sans-serif;
+      color: #243247;
+      background: #f5f8fc;
+      line-height: 1.6;
+    }
 
-header {
-  display:flex;
-  align-items:center;
-  gap:20px;
-}
-header h1 { font-size:25px; }
-header p { color:#dceaff; }
+    header {
+      background: #123e70;
+      color: white;
+      padding: 15px 8%;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-nav {
-  background:white;
-  padding:17px 8%;
-  display:flex;
-  flex-wrap:wrap;
-  gap:25px;
-  box-shadow:0 2px 8px #ddd;
-}
+    header img {
+      width: 65px;
+      height: 65px;
+      object-fit: contain;
+    }
 
-nav a {
-  text-decoration:none;
-  color:#164e91;
-  font-weight:bold;
-  padding:8px 12px;
-  border-radius:6px;
-  transition:0.3s;
-}
+    .identitas h1 {
+      font-size: 22px;
+    }
 
-nav a:hover {
-  background:#123e70;
-  color:white;
-}
-nav a.active {
-  background:#123e70;
-  color:white;
-}
-.hero {
-  background:linear-gradient(120deg,#123e70,#2879bd);
-  color:white;
-  padding:75px 8%;
-}
+    .identitas p {
+      font-size: 13px;
+    }
 
-.hero h2 {
-  font-size:36px;
-  margin-bottom:15px;
-}
+    nav {
+      background: #ffffff;
+      padding: 12px 8%;
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
 
-.hero p {
-  max-width:650px;
-  margin-bottom:25px;
-}
+    nav a {
+      text-decoration: none;
+      color: #123e70;
+      font-weight: bold;
+      font-size: 14px;
+    }
 
-.tombol {
-  display:inline-block;
-  background:white;
-  color:#123e70;
-  padding:12px 22px;
-  border-radius:7px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    nav a:hover,
+    nav a.active {
+      color: #e69b22;
+    }
 
-.container { padding:45px 8%; }
+    .hero {
+      background: linear-gradient(120deg, #123e70, #2877b9);
+      color: white;
+      padding: 75px 8%;
+      text-align: center;
+    }
 
-.judul {
-  color:#123e70;
-  margin-bottom:25px;
-  font-size:25px;
-}
+    .hero h2 {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
 
-.cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      font-size: 16px;
+    }
 
-.card {
-  background:white;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 3px 12px #ddd;
-  border-top:4px solid #2879bd;
-}
+    .container {
+      padding: 45px 8%;
+    }
 
-.card h3 {
-  color:#164e91;
-  margin-bottom:10px;
-}
+    .judul {
+      color: #123e70;
+      font-size: 25px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
 
-.card p { font-size:14px; }
+    .kartu {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin-bottom: 18px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
+    }
 
-.informasi {
-  background:#e5effb;
-  padding:30px;
-  border-radius:12px;
-}
+    .kartu h3 {
+      color: #123e70;
+      margin-bottom: 10px;
+    }
 
-footer {
-  background:#123e70;
-  color:white;
-  text-align:center;
-  padding:28px;
-}
+    .kartu a {
+      color: #1769aa;
+      font-weight: bold;
+    }
 
+    /* GALERI FOTO */
 
-@media(max-width:600px) {
-  .hero h2 {
-    font-size:27px;
-  }
+    .galeri {
+      padding: 45px 8%;
+      background: white;
+    }
 
-  header {
-    padding:15px 5%;
-    gap:12px;
-  }
+    .galeri-slider {
+      position: relative;
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #ccd5e0;
+      background: #123e70;
+    }
 
-  .logo {
-    width:55px;
-    height:55px;
-  }
+    .galeri-slider img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+    }
 
-  header h1 {
-    font-size:20px;
-  }
+    .galeri-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 25px 20px;
+      color: white;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    }
 
-  header p {
-    font-size:11px;
-  }
+    .galeri-caption h3 {
+      font-size: 21px;
+    }
 
-  .container {
-    padding:35px 7%;
-  }
-}
+    .galeri-caption p {
+      font-size: 14px;
+    }
 
-</style>
+    .galeri-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background: rgba(0,0,0,0.5);
+      color: white;
+      font-size: 25px;
+      padding: 12px 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    .galeri-btn:hover {
+      background: #123e70;
+    }
+
+    .galeri-prev {
+      left: 15px;
+    }
+
+    .galeri-next {
+      right: 15px;
+    }
+
+    .galeri-indikator {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 18px;
+    }
+
+    .galeri-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: #bdc9d8;
+      cursor: pointer;
+      border: none;
+    }
+
+    .galeri-dot.active {
+      background: #123e70;
+      transform: scale(1.2);
+    }
+
+    footer {
+      background: #123e70;
+      color: white;
+      text-align: center;
+      padding: 25px 8%;
+      font-size: 13px;
+    }
+
+    @media(max-width: 600px) {
+      header {
+        padding: 12px 5%;
+      }
+
+      header img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .identitas h1 {
+        font-size: 17px;
+      }
+
+      nav {
+        padding: 12px 5%;
+        gap: 15px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 55px 6%;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      .container {
+        padding: 35px 6%;
+      }
+
+      .judul {
+        font-size: 22px;
+      }
+
+      .galeri {
+        padding: 35px 6%;
+      }
+
+      .galeri-slider img {
+        height: 250px;
+      }
+
+      .galeri-caption h3 {
+        font-size: 17px;
+      }
+
+      .galeri-caption p {
+        font-size: 12px;
+      }
+
+      .galeri-btn {
+        font-size: 18px;
+        padding: 9px 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-
-<header>
-  <img src="logo-grisaba.png" alt="Logo SMK Negeri 1 Bancak" class="logo">
-  <div>
-    <h1>KURIKULUM GRISABA</h1>
-    <p>SMK NEGERI 1 BANCAK | KABUPATEN SEMARANG</p>
-  </div>
-</header>
-
-
-<nav>
-  <a href="#beranda">Beranda</a>
-  <a href="#akademik">Akademik</a>
-  <a href="#asesmen">Asesmen</a>
-  <a href="#dokumen">Dokumen</a>
-  <a href="#informasi">Informasi</a>
-</nav>
-
-<section class="hero" id="beranda">
-  <h2>Selamat Datang di Kurikulum Grisaba</h2>
-  <p>
-    Pusat informasi akademik SMK Negeri 1 Bancak.
-    Informasi kegiatan pembelajaran, agenda sekolah,
-    asesmen, dan dokumen kurikulum.
-  </p>
-  <a href="#akademik" class="tombol">Jelajahi Informasi</a>
-</section>
-
-<section class="container" id="akademik">
-  <h2 class="judul">Informasi Akademik</h2>
-  <div class="cards">
-  
-
-<a href="https://drive.google.com/file/d/19MEUEy4Oc_gIORzQkMttdDywbTpCU3zS/view?usp=drive_link"
-   target="_blank"
-   rel="noopener noreferrer"
-   class="card"
-   style="text-decoration:none; color:inherit; display:block;">
-
-  <h3>Kalender Pendidikan</h3>
-  <p>Informasi kalender pendidikan dan kegiatan sekolah.</p>
-  <p style="color:#2879bd; font-weight:bold; margin-top:12px;">
-    Lihat Dokumen →
-  </p>
-
-</a>
-
-
-    <div class="card">
-      <h3>Agenda Akademik</h3>
-      <p>Jadwal dan agenda kegiatan akademik sekolah.</p>
+  <!-- HEADER -->
+  <header>
+    <img src="logo-grisaba.png" alt="Logo SMK Negeri 1 Bancak">
+    <div class="identitas">
+      <h1>SMK NEGERI 1 BANCAK</h1>
+      <p>Website Informasi Kurikulum Grisaba</p>
     </div>
-    <div class="card">
-      <h3>Pembelajaran</h3>
-      <p>Informasi kegiatan pembelajaran dan kurikulum.</p>
+  </header>
+
+  <!-- MENU NAVIGASI -->
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#akademik">Akademik</a>
+    <a href="#asesmen">Asesmen</a>
+    <a href="#dokumen">Dokumen</a>
+    <a href="#informasi">Informasi</a>
+  </nav>
+
+  <!-- BERANDA -->
+  <section class="hero" id="beranda">
+    <h2>Selamat Datang di Kurikulum Grisaba</h2>
+    <p>
+      Pusat informasi akademik, kegiatan pembelajaran,
+      asesmen, dan dokumen kurikulum SMK Negeri 1 Bancak.
+    </p>
+  </section>
+
+  <!-- GALERI FOTO -->
+  <section class="galeri" id="galeri">
+    <h2 class="judul">Galeri Kegiatan Grisaba</h2>
+    <p style="text-align:center; margin-top:-15px; margin-bottom:25px; color:#64748b;">
+      Dokumentasi kegiatan SMK Negeri 1 Bancak
+    </p>
+
+    <div class="galeri-slider">
+      <img
+        id="fotoGaleri"
+        src="https://drive.google.com/thumbnail?id=1z7jkIoGk0Q_sEA4fBxHOjyPELYXr4yL8&sz=w1600"
+        alt="Galeri kegiatan SMK Negeri 1 Bancak">
+
+      <div class="galeri-caption">
+        <h3 id="judulGaleri">Kegiatan Grisaba 1</h3>
+        <p id="keteranganGaleri">Dokumentasi kegiatan sekolah</p>
+      </div>
+
+      <button type="button" class="galeri-btn galeri-prev"
+        onclick="fotoSebelumnya()" aria-label="Foto sebelumnya">❮</button>
+
+      <button type="button" class="galeri-btn galeri-next"
+        onclick="fotoBerikutnya()" aria-label="Foto berikutnya">❯</button>
     </div>
-  </div>
-</section>
 
-<section class="container" id="asesmen">
-  <h2 class="judul">Informasi Asesmen</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>ASAJ</h3>
-      <p>Informasi asesmen kelas XII.</p>
+    <div class="galeri-indikator" id="indikatorGaleri"></div>
+  </section>
+
+  <!-- AKADEMIK -->
+  <section class="container" id="akademik">
+    <h2 class="judul">Informasi Akademik</h2>
+
+    <div class="kartu">
+      <h3>Kegiatan Pembelajaran</h3>
+      <p>
+        Informasi kegiatan pembelajaran, kalender akademik,
+        dan program kurikulum SMK Negeri 1 Bancak.
+      </p>
     </div>
-    <div class="card">
-      <h3>ASAS</h3>
-      <p>Informasi asesmen kelas X dan XI.</p>
+
+    <div class="kartu">
+      <h3>Program Kurikulum</h3>
+      <p>
+        Informasi program pengembangan pembelajaran,
+        kegiatan kokurikuler, dan Teaching Factory.
+      </p>
     </div>
-    <div class="card">
-      <h3>TKA</h3>
-      <p>Informasi Tes Kemampuan Akademik.</p>
+  </section>
+
+  <!-- ASESMEN -->
+  <section class="container" id="asesmen">
+    <h2 class="judul">Informasi Asesmen</h2>
+
+    <div class="kartu">
+      <h3>Asesmen Sumatif</h3>
+      <p>
+        Informasi pelaksanaan asesmen, jadwal, dan
+        ketentuan pelaksanaan asesmen sekolah.
+      </p>
     </div>
-  </div>
-</section>
 
-<section class="container" id="dokumen">
-  <h2 class="judul">Pusat Dokumen</h2>
-  <div class="informasi">
-    <h3>Dokumen Kurikulum</h3>
-    <p>Tempat informasi dan dokumen pendukung kegiatan kurikulum sekolah.</p>
-  </div>
-</section>
+    <div class="kartu">
+      <h3>Informasi TKA</h3>
+      <p>
+        Informasi Tes Kemampuan Akademik dan kegiatan
+        persiapan murid kelas XII.
+      </p>
+    </div>
+  </section>
 
-<section class="container" id="informasi">
-  <h2 class="judul">Informasi Sekolah</h2>
-  <div class="informasi">
-    <h3>SMK Negeri 1 Bancak</h3>
-    <p>Bersama membangun pembelajaran berkualitas, berkarakter, dan berorientasi pada dunia kerja.</p>
-  </div>
-</section>
+  <!-- DOKUMEN -->
+  <section class="container" id="dokumen">
+    <h2 class="judul">Dokumen Kurikulum</h2>
 
-<footer>
-  <h3>SMK NEGERI 1 BANCAK</h3>
-  <p>Website Informasi Kurikulum Grisaba</p>
-  <p>© 2026</p>
-</footer>
+    <div class="kartu">
+      <h3>Kurikulum Satuan Pendidikan</h3>
+      <p>
+        Dokumen Kurikulum Satuan Pendidikan SMK Negeri 1 Bancak.
+      </p>
+      <a href="https://s.id/kur-grisaba" target="_blank">
+        Buka Dokumen KSP
+      </a>
+    </div>
+  </section>
 
+  <!-- INFORMASI -->
+  <section class="container" id="informasi">
+    <h2 class="judul">Informasi dan Pengumuman</h2>
 
-<script>
-const menuLinks = document.querySelectorAll("nav a");
-const sections = document.querySelectorAll("section[id]");
+    <div class="kartu">
+      <h3>Informasi Sekolah</h3>
+      <p>
+        Informasi dan pengumuman terbaru untuk guru,
+        murid, serta warga SMK Negeri 1 Bancak.
+      </p>
+      <a href="https://s.id/info-grisaba2" target="_blank">
+        Buka Informasi Grisaba
+      </a>
+    </div>
+  </section>
 
-function updateActiveMenu() {
-  let currentSection = "beranda";
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Kurikulum Grisaba - SMK Negeri 1 Bancak</p>
+    <p>Kabupaten Semarang, Jawa Tengah</p>
+  </footer>
 
-  sections.forEach((section) => {
-    if (window.scrollY >= section.offsetTop - 200) {
-      currentSection = section.id;
+  <!-- JAVASCRIPT -->
+  <script>
+    // MENU AKTIF OTOMATIS
+    const menuLinks = document.querySelectorAll("nav a");
+    const sections = document.querySelectorAll("section[id]");
+
+    function updateActiveMenu() {
+      let currentSection = "beranda";
+
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 200) {
+          currentSection = section.id;
+        }
+      });
+
+      menuLinks.forEach((link) => {
+        link.classList.toggle(
+          "active",
+          link.getAttribute("href") === "#" + currentSection
+        );
+      });
     }
-  });
 
-  menuLinks.forEach((link) => {
-    link.classList.toggle(
-      "active",
-      link.getAttribute("href") === "#" + currentSection
-    );
-  });
-}
+    window.addEventListener("scroll", updateActiveMenu);
+    window.addEventListener("load", updateActiveMenu);
 
-window.addEventListener("scroll", updateActiveMenu);
-window.addEventListener("load", updateActiveMenu);
-</script>
+    // DATA FOTO GALERI DARI GOOGLE DRIVE
+    const daftarFoto = [
+      {
+        url: "https://drive.google.com/thumbnail?id=1z7jkIoGk0Q_sEA4fBxHOjyPELYXr4yL8&sz=w1600",
+        judul: "Kegiatan Grisaba 1",
+        keterangan: "Dokumentasi kegiatan SMK Negeri 1 Bancak"
+      },
+      {
+        url: "https://drive.google.com/thumbnail?id=1eT5CyL8SpMYIdyvE3t_rvMvX-vsvHtcY&sz=w1600",
+        judul: "Kegiatan Grisaba 2",
+        keterangan: "Dokumentasi kegiatan SMK Negeri 1 Bancak"
+      },
+      {
+        url: "https://drive.google.com/thumbnail?id=1voKw34KMH2tc5jVjLm-vjkP-Eni--rlW&sz=w1600",
+        judul: "Kegiatan Grisaba 3",
+        keterangan: "Dokumentasi kegiatan SMK Negeri 1 Bancak"
+      }
+    ];
 
+    let indeksFoto = 0;
+    let timerGaleri;
+
+    function tampilkanFoto() {
+      const foto = daftarFoto[indeksFoto];
+
+      document.getElementById("fotoGaleri").src = foto.url;
+      document.getElementById("judulGaleri").textContent = foto.judul;
+      document.getElementById("keteranganGaleri").textContent = foto.keterangan;
+
+      const indikator = document.getElementById("indikatorGaleri");
+      indikator.innerHTML = "";
+
+      daftarFoto.forEach((item, index) => {
+        const dot = document.createElement("button");
+
+        dot.type = "button";
+        dot.className = "galeri-dot" +
+          (index === indeksFoto ? " active" : "");
+
+        dot.setAttribute("aria-label", "Lihat foto " + (index + 1));
+
+        dot.onclick = function() {
+          indeksFoto = index;
+          tampilkanFoto();
+          mulaiOtomatis();
+        };
+
+        indikator.appendChild(dot);
+      });
+    }
+
+    function fotoBerikutnya() {
+      indeksFoto = (indeksFoto + 1) % daftarFoto.length;
+      tampilkanFoto();
+      mulaiOtomatis();
+    }
+
+    function fotoSebelumnya() {
+      indeksFoto = (indeksFoto - 1 + daftarFoto.length) % daftarFoto.length;
+      tampilkanFoto();
+      mulaiOtomatis();
+    }
+
+    function mulaiOtomatis() {
+      clearInterval(timerGaleri);
+
+      timerGaleri = setInterval(function() {
+        indeksFoto = (indeksFoto + 1) % daftarFoto.length;
+        tampilkanFoto();
+      }, 5000);
+    }
+
+    tampilkanFoto();
+    mulaiOtomatis();
+  </script>
 
 </body>
 </html>
