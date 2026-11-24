@@ -20,7 +20,17 @@ header {
   color:white;
   padding:25px 8%;
 }
+.logo {
+  width:80px;
+  height:80px;
+  object-fit:contain;
+}
 
+header {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
 header h1 { font-size:25px; }
 header p { color:#dceaff; }
 
@@ -117,10 +127,15 @@ footer {
 
 <body>
 
+
 <header>
-  <h1>KURIKULUM GRISABA</h1>
-  <p>SMK NEGERI 1 BANCAK | KABUPATEN SEMARANG</p>
+  <img src="logo-grisaba.png" alt="Logo SMK Negeri 1 Bancak" class="logo">
+  <div>
+    <h1>KURIKULUM GRISABA</h1>
+    <p>SMK NEGERI 1 BANCAK | KABUPATEN SEMARANG</p>
+  </div>
 </header>
+
 
 <nav>
   <a href="#beranda">Beranda</a>
