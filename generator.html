@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generator SI - Kurikulum Grisaba</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f6fb;
+  color: #243247;
+  line-height: 1.6;
+}
+
+header {
+  background: #123e70;
+  color: white;
+  padding: 22px 7%;
+}
+
+.header-content {
+  max-width: 1100px;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 25px;
+}
+
+header p {
+  font-size: 14px;
+  color: #dbeafe;
+}
+
+.kembali {
+  display: inline-block;
+  margin-top: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 0 18px;
+}
+
+.intro {
+  margin-bottom: 22px;
+}
+
+.intro h2 {
+  color: #123e70;
+  font-size: 25px;
+}
+
+.intro p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form-section {
+  background: white;
+  padding: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.form-section h3 {
+  color: #123e70;
+  font-size: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #e5eaf0;
+  padding-bottom: 10px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 17px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #334155;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 7px;
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  background: white;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #2877b9;
+  box-shadow: 0 0 0 2px rgba(40,119,185,0.12);
+}
+
+.pilihan-dokumen {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.pilihan-dokumen label {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-weight: normal;
+  padding: 11px;
+  background: #f5f8fc;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.pilihan-dokumen input {
+  width: auto;
+  margin-top: 4px;
+}
+
+.tombol {
+  background: #123e70;
+  color: white;
+  border: none;
+  padding: 13px 22px;
+  border-radius: 7px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tombol:hover {
+  background: #2877b9;
+}
+
+.tombol-reset {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.aksi {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.hasil {
+  display: none;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  border: 1px solid #b8d6f1;
+  overflow-wrap: anywhere;
+}
+
+.hasil h3 {
+  color: #123e70;
+  margin-bottom: 12px;
+}
+
+.hasil pre {
+  white-space: pre-wrap;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+@media(max-width: 650px) {
+  header {
+    padding: 20px 6%;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  .form-grid,
+  .pilihan-dokumen {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 18px;
+  }
+
+  .intro h2 {
+    font-size: 22px;
+  }
+
+  .aksi button {
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>GENERATOR SI</h1>
+    <p>Perangkat Ajar Berbasis AI | Kurikulum Grisaba</p>
+    <a class="kembali" href="index.html">← Kembali ke Website Kurikulum</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="intro">
+    <h2>Generator Perangkat Ajar</h2>
+    <p>
+      Lengkapi informasi pembelajaran untuk menyiapkan
+      perangkat ajar dan evaluasi secara terintegrasi.
+    </p>
+  </div>
+
+  <form id="formGenerator">
+
+    <section class="form-section">
+      <h3>1. Identitas Guru dan Sekolah</h3>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Nama Guru</label>
+          <input type="text" name="namaGuru"
+            placeholder="Masukkan nama guru" required>
+        </div>
+
+        <div class="form-group">
+          <label>Nama Sekolah</label>
+          <input type="text" name="sekolah"
+            value="SMK Negeri 1 Bancak" required>
+        </div>
+
+        <div class="form-group">
+          <label>Mata Pelajaran</label>
+          <input type="text" name="mapel"
+            placeholder="Contoh: Pemeliharaan Mesin Sepeda Motor"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label>Konsentrasi Keahlian</label>
+          <select name="konsentrasi" required>
+            <option value="">Pilih konsentrasi</option>
+            <option>Teknik Kendaraan Ringan</option>
+            <option>Teknik Sepeda Motor</option>
+            <option>Teknik Audio Video</option>
+            <option>Teknik Komputer dan Jaringan</option>
+            <option>Desain dan Produksi Busana</option>
+            <option>Umum / Lintas Konsentrasi</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Kelas</label>
+          <select name="kelas" required>
+            <option value="">Pilih kelas</option>
+            <option>X</option>
+            <option>XI</option>
+            <option>XII</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Fase</label>
+          <select name="fase" required>
+            <option value="">Pilih fase</option>
+            <option>E</option>
+            <option>F</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Semester</label>
+          <select name="semester" required>
+            <option value="">Pilih semester</option>
+            <option>Ganjil</option>
+            <option>Genap</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tahun Pelajaran</label>
+          <input type="text" name="tahun"
+            value="2026/2027" required>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h3>2. Informasi Kurikulum dan Materi</h3>
+
+      <div class="form-grid">
+
+        <div class="form-group full">
+          <label>Capaian Pembelajaran (CP)</label>
+          <textarea name="cp"
+            placeholder="Masukkan Capaian Pembelajaran sesuai mata pelajaran dan fase..."
+            required></textarea>
+        </div>
+
+        <div class="form-group full">
+          <label>Elemen Pembelajaran</label>
+          <input type="text" name="elemen"
+            placeholder="Masukkan elemen pembelajaran">
+        </div>
+
+        <div class="form-group full">
+          <label>Materi atau Topik Pembelajaran</label>
+          <textarea name="materi"
+            placeholder="Tuliskan materi yang akan dipelajari..."
+            required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Alokasi Waktu</label>
+          <input type="text" name="alokasi"
+            placeholder="Contoh: 10 JP">
+        </div>
+
+        <div class="form-group">
+          <label>Jumlah Pertemuan</label>
+          <input type="number" name="pertemuan"
+            min="1" placeholder="Contoh: 5">
+        </div>
+
+        <div class="form-group full">
+          <label>Karakteristik dan Kondisi Murid</label>
+          <textarea name="karakteristik"
+            placeholder="Contoh: kemampuan awal beragam, sebagian murid sudah mengenal materi dasar..."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h3>3. Rancangan Pembelajaran</h3>
+
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label>Model Pembelajaran</label>
+          <select name="model">
+            <option value="">Pilih model pembelajaran</option>
+            <option>Problem Based Learning (PBL)</option>
+            <option>Project Based Learning (PjBL)</option>
+            <option>Discovery Learning</option>
+            <option>Inquiry Learning</option>
+            <option>Teaching Factory</option>
+            <option>Cooperative Learning</option>
+            <option>Collaborative Learning</option>
+            <option>Teaching at the Right Level</option>
+            <option>Model lainnya / rekomendasi AI</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Pendekatan Pembelajaran</label>
+          <select name="pendekatan">
+            <option value="">Pilih pendekatan</option>
+            <option>Pembelajaran Mendalam</option>
+            <option>Pembelajaran Kontekstual</option>
+            <option>Pembelajaran Diferensiasi</option>
+            <option>Pendekatan Saintifik</option>
+            <option>Integrasi beberapa pendekatan</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label>Dimensi Profil Lulusan yang Dikembangkan</label>
+          <div class="pilihan-dokumen">
+            <label><input type="checkbox" name="dimensi" value="Keimanan dan Ketakwaan terhadap Tuhan YME"> Keimanan dan Ketakwaan terhadap Tuhan YME</label>
+            <label><input type="checkbox" name="dimensi" value="Kewargaan"> Kewargaan</label>
+            <label><input type="checkbox" name="dimensi" value="Penalaran Kritis"> Penalaran Kritis</label>
+            <label><input type="checkbox" name="dimensi" value="Kreativitas"> Kreativitas</label>
+            <label><input type="checkbox" name="dimensi" value="Kolaborasi"> Kolaborasi</label>
+            <label><input type="checkbox" name="dimensi" value="Kemandirian"> Kemandirian</label>
+            <label><input type="checkbox" name="dimensi" value="Kesehatan"> Kesehatan</label>
+            <label><input type="checkbox" name="dimensi" value="Komunikasi"> Komunikasi</label>
+          </div>
+        </div>
+
+        <div class="form-group full">
+          <label>Catatan atau Kebutuhan Khusus</label>
+          <textarea name="catatan"
+            placeholder="Tuliskan kebutuhan khusus, fasilitas praktik, alat, bahan, konteks industri, atau hal lain yang perlu diperhatikan AI..."></textarea>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="form-section">
+      <h3>4. Dokumen yang Akan Dibuat</h3>
+
+      <div class="pilihan-dokumen">
+
+        <label><input type="checkbox" name="dokumen" value="Analisis CP"> Analisis CP</label>
+
+        <label><input type="checkbox" name="dokumen" value="Tujuan Pembelajaran"> Tujuan Pembelajaran (TP)</label>
+
+        <label><input type="checkbox" name="dokumen" value="Alur Tujuan Pembelajaran"> Alur Tujuan Pembelajaran (ATP)</label>
+
+        <label><input type="checkbox" name="dokumen" value="Modul Ajar"> Modul Ajar</label>
+
+        <label><input type="checkbox" name="dokumen" value="Bahan Ajar"> Bahan Ajar</label>
+
+        <label><input type="checkbox" name="dokumen" value="LKPD"> LKPD</label>
+
+        <label><input type="checkbox" name="dokumen" value="Asesmen Diagnostik"> Asesmen Diagnostik</label>
+
+        <label><input type="checkbox" name="dokumen" value="Asesmen Formatif"> Asesmen Formatif</label>
+
+        <label><input type="checkbox" name="dokumen" value="Asesmen Sumatif"> Asesmen Sumatif</label>
+
+        <label><input type="checkbox" name="dokumen" value="Kisi-kisi Soal"> Kisi-kisi Soal</label>
+
+        <label><input type="checkbox" name="dokumen" value="Paket Soal"> Paket Soal</label>
+
+        <label><input type="checkbox" name="dokumen" value="Kunci Jawaban"> Kunci Jawaban</label>
+
+        <label><input type="checkbox" name="dokumen" value="Rubrik Penskoran"> Rubrik Penskoran</label>
+
+        <label><input type="checkbox" name="dokumen" value="Telaah Soal"> Telaah Soal</label>
+
+        <label><input type="checkbox" name="dokumen" value="Analisis Hasil Asesmen"> Analisis Hasil Asesmen</label>
+
+        <label><input type="checkbox" name="dokumen" value="Program Remedial dan Pengayaan"> Program Remedial dan Pengayaan</label>
+
+      </div>
+    </section>
+
+    <div class="aksi">
+      <button type="submit" class="tombol">
+        Periksa Data Pembelajaran
+      </button>
+
+      <button type="reset" class="tombol tombol-reset">
+        Reset Formulir
+      </button>
+    </div>
+
+  </form>
+
+  <section class="hasil" id="hasil">
+    <h3>Data Pembelajaran Berhasil Diperiksa</h3>
+    <p style="font-size:13px; color:#64748b; margin-bottom:12px;">
+      Berikut ringkasan data yang akan digunakan sebagai dasar
+      pembuatan perangkat ajar berbasis AI.
+    </p>
+    <pre id="ringkasan"></pre>
+    <div class="aksi">
+      <button type="button" class="tombol"
+        onclick="salinData()">Salin Data</button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Generator SI | Kurikulum Grisaba<br>
+  SMK Negeri 1 Bancak
+</footer>
+
+<script>
+const form = document.getElementById("formGenerator");
+
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const data = new FormData(form);
+  const dimensi = data.getAll("dimensi");
+  const dokumen = data.getAll("dokumen");
+
+  if (dokumen.length === 0) {
+    alert("Silakan pilih minimal satu dokumen yang akan dibuat.");
+    return;
+  }
+
+  const ringkasan = `
+GENERATOR SI - KURIKULUM GRISABA
+
+IDENTITAS GURU
+Nama Guru: ${data.get("namaGuru")}
+Sekolah: ${data.get("sekolah")}
+Mata Pelajaran: ${data.get("mapel")}
+Konsentrasi Keahlian: ${data.get("konsentrasi")}
+Kelas: ${data.get("kelas")}
+Fase: ${data.get("fase")}
+Semester: ${data.get("semester")}
+Tahun Pelajaran: ${data.get("tahun")}
+
+INFORMASI KURIKULUM
+Capaian Pembelajaran:
+${data.get("cp")}
+
+Elemen:
+${data.get("elemen") || "-"}
+
+Materi:
+${data.get("materi")}
+
+Alokasi Waktu: ${data.get("alokasi") || "-"}
+Jumlah Pertemuan: ${data.get("pertemuan") || "-"}
+
+Karakteristik Murid:
+${data.get("karakteristik") || "-"}
+
+RANCANGAN PEMBELAJARAN
+Model: ${data.get("model") || "Direkomendasikan AI"}
+Pendekatan: ${data.get("pendekatan") || "Direkomendasikan AI"}
+
+Dimensi Profil Lulusan:
+${dimensi.length ? dimensi.join(", ") : "Belum dipilih"}
+
+Catatan:
+${data.get("catatan") || "-"}
+
+DOKUMEN YANG DIMINTA
+${dokumen.map((item, index) => (index + 1) + ". " + item).join("\n")}
+`;
+
+  document.getElementById("ringkasan").textContent = ringkasan;
+  document.getElementById("hasil").style.display = "block";
+
+  document.getElementById("hasil").scrollIntoView({
+    behavior: "smooth"
+  });
+});
+
+function salinData() {
+  const teks = document.getElementById("ringkasan").textContent;
+
+  navigator.clipboard.writeText(teks)
+    .then(() => alert("Data berhasil disalin."))
+    .catch(() => alert("Gagal menyalin. Silakan salin teks secara manual."));
+}
+</script>
+
+</body>
+</html>
